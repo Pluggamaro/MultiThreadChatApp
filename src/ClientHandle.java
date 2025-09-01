@@ -35,7 +35,13 @@ public class ClientHandle implements Runnable {
                 server.broadcast(activeInput, this);
             }
         }catch(IOException e){
-            System.err.println("Client error: ");
+            System.err.println("Client error: " + e.getMessage());
+        }finally{
+            //cleans up resources and ultimately removes users
+            server.removeClient(this);
+            try {
+                clientSocket.close();
+            }
         }
     }
 
