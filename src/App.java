@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class App {
 
@@ -33,10 +34,16 @@ public class App {
             });
             serverListen.start();
 
-            
+            System.out.println("Connected.");
+            String userInput;
+            while((userInput = stdIn.readLine()) != null)){
+                out.println(userInput);
+            }
 
-        }catch(){
-
+        }catch(UnknownHostException e){
+            System.err.println("Host fault " + SERVER_ADDRESS);
+        }catch(IOException e){
+            System.err.println("Ensure that server at " + SERVER_ADDRESS +" is running.");
         }
 
     }
