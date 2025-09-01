@@ -41,8 +41,19 @@ public class ClientHandle implements Runnable {
             server.removeClient(this);
             try {
                 clientSocket.close();
+            }catch(IOException e){
+                e.printStackTrace();
             }
         }
+    }
+
+    //helper method for broadcast
+    public void sendMessage(String msg){
+        out.println(msg);
+    }
+
+    public String getUser(){
+        return user;
     }
 
 }

@@ -37,7 +37,7 @@ public class AppServer {
     public void broadcast(String broadcastMessage, ClientHandle sender){
         for(ClientHandle client : clientHandlers){
             if(client != sender){
-                
+                client.sendMessage(sender.getUser() + ": " + broadcastMessage);
             }
         }
     }
@@ -45,6 +45,12 @@ public class AppServer {
     public void removeClient(ClientHandle clientHandler){
         clientHandlers.remove(clientHandler);
         System.out.println(clientHandler + " left.");
+        broadcast(clientHandler.getUser() + " left", null);
+    }
+
+    public static void main(String [] args){
+        AppServer server = new AppServer();
+        server.start();
     }
 
 }
