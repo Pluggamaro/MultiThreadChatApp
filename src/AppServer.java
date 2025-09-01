@@ -33,4 +33,13 @@ public class AppServer {
         }
     }
 
+    //method broadcasts message to all except sender
+    public void broadcast(String broadcastMessage, ClientHandle sender){
+        for(ClientHandle client : clientHandlers){
+            if(client != sender){
+                client
+            }
+        }
+    }
+
 }
