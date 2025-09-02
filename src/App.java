@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
 public class App {
 
     private static final String SERVER_ADDRESS = "127.0.0.1";
-    private static final int SERVER_PORT = 9090;
+    private static final int SERVER_PORT = 3000;
     public static void main(String[] args) throws Exception {
         
         try(
@@ -36,14 +36,14 @@ public class App {
 
             System.out.println("Connected.");
             String userInput;
-            while((userInput = stdIn.readLine()) != null)){
+            while((userInput = stdIn.readLine()) != null){
                 out.println(userInput);
             }
 
         }catch(UnknownHostException e){
             System.err.println("Host fault " + SERVER_ADDRESS);
         }catch(IOException e){
-            System.err.println("Ensure that server at " + SERVER_ADDRESS +" is running.");
+            System.err.println("Ensure that server at " + SERVER_ADDRESS +" is running. \n" + e.getMessage());
         }
 
     }

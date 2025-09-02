@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 public class AppServer {
-    private static final int PORT = 9090;
+    private static final int PORT = 3000;
 
     private final Set<ClientHandle> clientHandlers = new CopyOnWriteArraySet<>();
     
