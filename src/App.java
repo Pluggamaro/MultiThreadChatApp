@@ -36,7 +36,7 @@ public class App {
             });
             serverListen.start();
 
-            System.out.println("Connected.");
+            System.out.println("Connected. \nStart Typing and your peers will see your message!");
             String userInput;
             while((userInput = stdIn.readLine()) != null){
                 out.println(userInput);
