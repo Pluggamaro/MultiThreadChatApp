@@ -17,6 +17,8 @@ public class App {
             BufferedReader in = new BufferedReader((new InputStreamReader(socket.getInputStream())));
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         ){
+            System.out.println("****************WELCOME TO THE MULTI-THREADED CHAT APP****************");
+            System.out.print("YOUR PEERS WILL CHAT TO YOU SOON.");
             System.out.print("Enter username: ");
             String username = stdIn.readLine();
             out.println(username);
@@ -43,7 +45,7 @@ public class App {
         }catch(UnknownHostException e){
             System.err.println("Host fault " + SERVER_ADDRESS);
         }catch(IOException e){
-            System.err.println("Ensure that server at " + SERVER_ADDRESS +" is running. \n" + e.getMessage());
+            System.err.println("Ensure that server at " + SERVER_ADDRESS +" is running first, then start your app. \n" + e.getMessage());
         }
 
     }
